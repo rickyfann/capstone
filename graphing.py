@@ -64,12 +64,14 @@ years = [
 for (i, (ix,year)) in enumerate(zip(indices, years)):
     fig,ax = plt.subplots(1,2, figsize=[20,7])
 
-    ax[0].plot(t_values[ix[0]:ix[1]], temp1_values_all[ix[0]:ix[1]])
+    ax[0].plot(t_values[ix[0]:ix[1]], temp1_values_all[ix[0]:ix[1]], label="T In")
+    ax[0].plot(t_values[ix[0]:ix[1]], temp2_values_all[ix[0]:ix[1]], label="T Out")
     ax[1].plot(t_values[ix[0]:ix[1]], delta[ix[0]:ix[1]])
 
     ax[0].set_title(f"Temperature vs Time ({year})")
     ax[0].set_xlabel("Time(h)")
     ax[0].set_ylabel("Temperature (deg C)")
+    ax[0].legend()
 
     ax[1].set_title(f"Temperature Difference vs Time ({year})")
     ax[1].set_xlabel("Time(h)")
