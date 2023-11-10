@@ -1,52 +1,70 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 # STEAM OUTLET TEMP APPROX 377.4 F
 
-def grab_year_data(year, raw_data):
-    return [raw_data[i] for (i,stamp) in enumerate(stamp_values) if year in stamp]
+def grab_year_indices(year, stamps):
+    start_index = 0
+    final_index = 0
+    for i,stamp in enumerate(stamps):
+        if year in stamp:
+            if final_index==0:
+                start_index=i
 
-data = pd.read_excel(r'C:\Users\SticksandStones\OneDrive\Documents\CAPSTONE\Raw Data.xlsx')
+            final_index = i
+    
+    return(start_index, final_index)
 
-# for i, val in enumerate(data.iloc[:,2]):
-#     if val>225 or val<150:
-#         data.drop(data.index[[i]])
+# data = pd.read_excel(r'C:\Users\SticksandStones\OneDrive\Documents\CAPSTONE\Raw Data.xlsx')
+data = pd.read_excel(r'Raw Data.xlsx')
 
 stamp_values = np.array(data.iloc[:,0], dtype=str)
-t_values_all = np.array(data.iloc[:,1])
+time_values_all = np.array(data.iloc[:,1])
 temp1_values_all = np.array(data.iloc[:,2])
 temp2_values_all = np.array(data.iloc[:,3])
 steam_values_all = np.array(data.iloc[:,6])
 corr_values_all = np.array(data.iloc[:,15])
 
-# temp1_values_all = np.array([i for i in temp1_values_all if i<=225 and i>150]).flatten()
-# temp2_values_all = np.array([i for i in temp2_values_all if i<=390 and i >=250]).flatten()
-# corr_values_all = np.array([i for i in corr_values_all if i<=1 and i>=0.89]).flatten()
+d = dict({
+    'Stamp': stamp_values,
+    'Time': time_values_all,
+    'Temperature 1': temp1_values_all,
+    'Temperature 2': temp2_values_all,
+    'Delta': temp2_values_all-temp1_values_all,
+    'Steam Values': steam_values_all,
+    'Correction Factor': corr_values_all,
+})
+# frame = pd.DataFrame(data=d)
 
-delta = temp2_values_all-temp1_values_all
+# collection = collection['Temperature 1'].where(160<=collection['Temperature 1'].all() and collection['Temperature 1'].all()<=215)
+# collection = collection['Temperature 2'].where(270<=collection['Temperature 2'].all() and collection['Temperature 2'].all()<=380)
+# collection = collection.drop(np.nan)
+# frame = collection[collection['Temperature 1']<215 and collection['Temperature 1']>160 and
+#                    collection['Temperature 2']<380 and collection['Temperature 2']>270 and
+#                    collection['Delta']<160 and collection['Delta']>110]
 
-temp1_vals_2018 = grab_year_data('2018', temp1_values_all)
-temp1_vals_2019 = grab_year_data('2019', temp1_values_all)
-temp1_vals_2020 = grab_year_data('2020', temp1_values_all)
-temp1_vals_2021 = grab_year_data('2021', temp1_values_all)
-temp1_vals_2022 = grab_year_data('2022', temp1_values_all)
-temp1_vals_2023 = grab_year_data('2023', temp1_values_all)
+# collection = pd.DataFrame(data=d)
+frame = pd.DataFrame(data=d)
 
-index1 = len(temp1_vals_2018)
-index2 = len(temp1_vals_2019)+index1
-index3 = len(temp1_vals_2020)+index2
-index4 = len(temp1_vals_2021)+index3
-index5 = len(temp1_vals_2022)+index4
-index6 = len(temp1_vals_2023)+index5
+# frame = []
+
+# df.where, df.drop, df.diff
+
+# for i, (val1, val2, val3) in enumerate(zip(collection['Temperature 1'], collection['Temperature 2'], collection['Delta'])):
+#     if 160<=val1<=215 and 270<=val2<=380 and 90<=val3<=160:
+#         frame.append(collection.iloc[i,:])
+
+# frame = pd.DataFrame(frame)
 
 indices = [
-    [0,index1],
-    [index1,index2],
-    [index2,index3],
-    [index3,index4],
-    [index4,index5],
-    [index5,index6],
+    grab_year_indices('2018', frame['Stamp']),
+    grab_year_indices('2019', frame['Stamp']),
+    grab_year_indices('2020', frame['Stamp']),
+    grab_year_indices('2021', frame['Stamp']),
+    grab_year_indices('2022', frame['Stamp']),
+    grab_year_indices('2023', frame['Stamp']),
 ]
 
 years = [
@@ -58,14 +76,32 @@ years = [
     2023
 ]
 
+
 fig,ax = plt.subplots(1,3, figsize=[30,7])
 
-ax[0].plot(t_values_all, temp1_values_all, label="Temperature In")
-ax[0].plot(t_values_all, temp2_values_all, label="Temperature Out")
+time = np.array(frame['Time'])
+T1 = np.array(frame['Temperature 1'])
+T2 = np.array(frame['Temperature 2'])
+de = np.array(frame['Delta'])
+f = np.array(frame['Correction Factor'])
 
-ax[1].plot(t_values_all, delta, label="Temperature Difference")
+# creating trendline and associated function
+z1 = np.polyfit(time, T2, 1)
+p1 = np.poly1d(z1)
 
-ax[2].plot(t_values_all, corr_values_all, label="Correction Factor")
+z2 = np.polyfit(time, de, 1)
+p2 = np.poly1d(z2)
+
+
+ax[0].plot(time, T1, '.', label="Temperature In")
+ax[0].plot(time, T2, '.', label="Temperature Out")
+ax[0].plot(time, p1(time), label="Trendline")
+
+ax[1].plot(time, de, '.', label="Temperature Difference")
+ax[1].plot(time, p2(time), label="Trendline")
+ax[1].set_ylim([0,160])
+
+ax[2].plot(time, f, '.', label="Correction Factor")
 
 for axis in ax:
     axis.set_title("Temperature vs Time (2018-2023)")
@@ -81,10 +117,18 @@ ax[2].set_ylabel("Correction Factor")
 for (i, (ix,year)) in enumerate(zip(indices, years)):
     fig,ax = plt.subplots(1,3, figsize=[30,7])
 
-    ax[0].plot(t_values_all[ix[0]:ix[1]], temp1_values_all[ix[0]:ix[1]], label="T In")
-    ax[0].plot(t_values_all[ix[0]:ix[1]], temp2_values_all[ix[0]:ix[1]], label="T Out")
-    ax[1].plot(t_values_all[ix[0]:ix[1]], delta[ix[0]:ix[1]], label="T delta")
-    ax[2].plot(t_values_all[ix[0]:ix[1]], corr_values_all[ix[0]:ix[1]], label="Correction Factor")
+    z1 = np.polyfit(time[ix[0]:ix[1]], T2[ix[0]:ix[1]], 1)
+    p1 = np.poly1d(z1)
+
+    z2 = np.polyfit(time[ix[0]:ix[1]], de[ix[0]:ix[1]], 1)
+    p2 = np.poly1d(z2)
+
+    ax[0].plot(time[ix[0]:ix[1]], T1[ix[0]:ix[1]], '.',label="T In")
+    ax[0].plot(time[ix[0]:ix[1]], T2[ix[0]:ix[1]], '.',label="T Out")
+    ax[1].plot(time[ix[0]:ix[1]], de[ix[0]:ix[1]], '.',label="T delta")
+    ax[2].plot(time[ix[0]:ix[1]], f[ix[0]:ix[1]], '.',label="Correction Factor")
+    ax[0].plot(time[ix[0]:ix[1]], p1(time[ix[0]:ix[1]]), label="Trendline")
+    ax[1].plot(time[ix[0]:ix[1]], p2(time[ix[0]:ix[1]]), label="Trendline")
 
     ax[0].set_title(f"Temperature vs Time ({year})")
     ax[0].set_xlabel("Time(h)")
@@ -94,7 +138,15 @@ for (i, (ix,year)) in enumerate(zip(indices, years)):
     ax[1].set_title(f"Temperature Difference vs Time ({year})")
     ax[1].set_xlabel("Time(h)")
     ax[1].set_ylabel("Temperature (deg C)")
+    ax[1].set_ylim([0,160])
 
     ax[2].set_title(f"Correction Factor vs Time ({year})")
     ax[2].set_xlabel("Time(h)")
     ax[2].set_ylabel("Correction Factor")
+
+diffs = frame['Delta'].diff()
+diffs = diffs.where(diffs<20)
+diffs = diffs.where(diffs>-20)
+
+plt.figure()
+plt.plot(time, np.array(diffs))
