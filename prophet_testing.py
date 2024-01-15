@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
-from prophet import Prophet
+import prophet
+# from prophet import Prophet
 
 data = pd.read_excel(r'Raw Data.xlsx')
 
@@ -41,8 +42,8 @@ a = pd.DataFrame(
     }
     )
 
-m = Prophet()
-m.fit(a)
+# m = prophet.
+# m.fit(a)
 
 # future = m.make_future_dataframe(periods=365)
 # future.tail()
