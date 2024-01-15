@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
-import prophet
-# from prophet import Prophet
+from prophet import Prophet
 
 data = pd.read_excel(r'Raw Data.xlsx')
 
@@ -25,7 +24,6 @@ d = dict({
 })
 
 collection = pd.DataFrame(data=d)
-# frame = pd.DataFrame(data=d)
 
 frame = []
 
@@ -38,14 +36,19 @@ frame = pd.DataFrame(frame)
 a = pd.DataFrame(
     {
     'ds': frame.iloc[:,0],
-    'y': frame.iloc[:,1]
+    'y': frame.iloc[:,6]
     }
     )
 
-# m = prophet.
-# m.fit(a)
+m = Prophet()
+m.fit(a)
 
-# future = m.make_future_dataframe(periods=365)
+future = m.make_future_dataframe(periods=365)
 # future.tail()
 
-print ("Hi")
+forecast = m.predict(future)
+times = np.arange(len(forecast.iloc[:,1]))
+
+plt.plot(times[:len(frame.iloc[:,6])], np.array(frame.iloc[:,6]), label="Actual Data")
+plt.plot(times, np.array(forecast.iloc[:,1]), label="Prediction")
+plt.show()
