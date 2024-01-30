@@ -148,6 +148,10 @@ for (i, (ix,year)) in enumerate(zip(indices, years)):
         row=1, col=3,
         )
     
+    fig.update_layout(
+        width=1200, height=400,
+    )
+    
     fig['layout']['xaxis']['title'] = "Time (h)"
     fig['layout']['xaxis2']['title'] = "Time (h)"
     fig['layout']['xaxis3']['title'] = "Time (h)"

@@ -3,7 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import plotly.express as px
 from prophet import Prophet
-# from prophet import Prophet
+from prophet.plot import add_changepoints_to_plot
+import datetime
 
 data = pd.read_excel(r'Raw Data.xlsx')
 
@@ -29,7 +30,10 @@ collection = pd.DataFrame(data=d)
 
 frame = []
 
-for i, (val1, val2, val3) in enumerate(zip(collection['Temperature 1'], collection['Temperature 2'], collection['Delta'])):
+for i, (val1, val2, val3) in enumerate(zip(collection['Temperature 1'], 
+                                           collection['Temperature 2'], 
+                                           collection['Delta'])):
+    
     if 160<=val1<=215 and 270<=val2<=380 and 90<=val3<=160:
         frame.append(collection.iloc[i,:])
 
@@ -42,13 +46,17 @@ a = pd.DataFrame(
     }
     )
 
-m = Prophet()
+#m = Prophet()
+m = Prophet(changepoint_prior_scale=0.005, changepoint_range = 1)
 m.fit(a)
 
 future = m.make_future_dataframe(periods=365)
 future.tail()
 
 forecast = m.predict(future)
-fig1 = m.plot(forecast)
 
-print ("Hi")
+fig1 = m.plot(forecast)
+a = add_changepoints_to_plot(fig1.gca(), m, forecast)
+
+for x in m.changepoints:
+    print(x)
