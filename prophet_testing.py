@@ -59,7 +59,30 @@ a = pd.DataFrame(
 # creates prophet object with specified changepoint scale and saturation point
 # scale manipulates the sparsity of changepoints
 # range manipulates the totality of the data being analyzed
+# changepoints = [
+#     "2022-04-12",
+#     "2022-04-22",
+#     "2022-05-04",
+#     "2022-05-05",
+#     "2022-05-20",
+#     "2022-06-06",
+#     "2022-06-28",
+#     "2022-07-29",
+#     "2022-08-18",
+#     "2022-09-29",
+#     "2022-10-14",
+#     "2022-12-13",
+#     "2023-01-17",
+#     "2023-01-24",
+#     "2023-01-30",
+#     "2023-02-21",
+#     "2023-03-14",
+#     "2023-03-21",
+#     "2023-03-30",
+# ]
+
 changepoint_scale = 0.005
+
 m = Prophet(changepoint_prior_scale=changepoint_scale, changepoint_range = 1)
 m.fit(a)
 
@@ -73,17 +96,23 @@ future['cap'] = 1
 forecast = m.predict(future)
 
 # plots the prediction alongside original data points
-fig1 = m.plot(forecast, xlabel="Time", ylabel="Correction Factor", include_legend=True)
+fig1 = m.plot(forecast, xlabel="Time", ylabel="Correction Factor", include_legend=True, figsize=(10,6))
 
 # plots change points as vertical red lines
 b = add_changepoints_to_plot(fig1.gca(), m, forecast)
 
-# prettifies graph
+# graph formatting
 plt.title(f"Prophet Prediction - Scale:{changepoint_scale}")
+plt.legend()
 
 # plots heat duty on twin axis
-ax2 = plt.twinx()
-ax2.plot(frame["Stamp"], frame["Heat Duty"], color='green', label="Heat Duty")
-ax2.set_ylabel("Heat Duty (kW)")
+fig2, ax = plt.subplots(figsize = [10,6])
+ax.plot(frame["Stamp"], frame["Heat Duty"], color='green', label="Heat Duty")
+ax.set_title("Heat Duty vs Time")
+ax.set_ylabel("Heat Duty (kW)")
+ax.set_xlabel("Time")
+ax.legend()
 
-plt.legend()
+# ax2 = plt.twinx()
+# ax2.plot(frame["Stamp"], frame["Heat Duty"], color='green', label="Heat Duty")
+# ax2.set_ylabel("Heat Duty (kW)")
