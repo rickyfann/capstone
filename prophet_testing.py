@@ -117,11 +117,8 @@ fig1 = m.plot(forecast, xlabel="Time", ylabel="Correction Factor", include_legen
 b = add_changepoints_to_plot(fig1.gca(), m, forecast)
 
 # plt.axvspan(20000, 20100, alpha=0.5)
-plt.axvspan(18110, 18260, color="b", alpha=0.5)
-plt.axvspan(18500, 18755, color="b", alpha=0.5)
-# plt.plot(forecast["ds"][forecast["ds"]<"2022"][forecast["ds"]>"2020"], forecast["trend_lower"][forecast["ds"]<"2022"][forecast["ds"]>"2020"], color="green")
-# plt.plot(np.arange(18100, 18500), forecast["trend_lower"][18100:18500], color="green")
-# upper bound is 20000, lower bound is like 17500 or something
+plt.axvspan(18110, 18260, color="#403152", alpha=0.5)
+# plt.axvspan(18500, 18755, color="#63221E", alpha=0.5)
 
 # graph formatting
 plt.title(f"Prophet Prediction - Scale:{changepoint_scale}")
@@ -138,15 +135,4 @@ ax.set_ylabel("Heat Duty (kW)")
 ax.set_xlabel("Time")
 ax.legend()
 
-# ax[1].plot(forecast["trend_lower"][forecast["ds"]>"2022"][forecast["ds"]>"2020"])
-
-# ax2 = plt.twinx()//
-# ax2.plot(frame["Stamp"], frame["Heat Duty"], color='green', label="Heat Duty")
-# ax2.set_ylabel("Heat Duty (kW)")
-#costing function
-# C = lambda x : (180e3 / 5 / 6 + 200e3 / 6) * x
-
-# duty_data = smoothTriangle(frame["Heat Duty"], 50)
 plt.savefig("heat_duty_graph.jpg", transparent=False)
-
-# fig3 = plt.plot(forecast["trend_lower"][forecast["ds"]>"2022"][forecast["ds"]>"2020"], xlabel="Time", ylabel="Correction Factor", include_legend=True, figsize=(10,6))

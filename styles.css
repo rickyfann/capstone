@@ -37,3 +37,11 @@ div[data-testid=stCheckbox]>label>div>div>div>p{
 font-size:25px;
 padding: 0px 0px 0px 0px 
 }
+
+div[data-testid=stMarkdownContainer]>p{
+font-family:Aptos Display;
+color:white;
+font-size: 28px;
+text-align: center;
+padding-top: 0px
+}
