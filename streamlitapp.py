@@ -117,8 +117,8 @@ for ax in [ax1, ax2]:
     for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
                 ax.get_xticklabels() + ax.get_yticklabels()):
         item.set_fontsize(22)
-        item.set_fontname("Amasis MT Std")
-        # item.set_fontname("Times New Roman")
+        # item.set_fontname("Amasis MT Std")
+        item.set_fontname("Times New Roman")
 
 # for figure in [fig, fig2]:
 #     figure.set_figheight(7)
@@ -177,6 +177,10 @@ with cols2[0]:
             md("body", "A: The costing function includes the loss as a result of the number of days required for the shutdown, the maintenance cost of $150000 for each cleaning, and the cost of operation for the total number of uptime days.")
             md("body", "Q: Why does the correction factor reset to 0.95 after a cleaning?")
             md("body", "A: A perfect 1.0 is based on a 1-shell pass 1-tube pass heat exchanger with no fouling concerns. The data indicates that 0.95 was approximately the best correction factor for our given exchanger running at the highest flowrates.")
+            md("body", "Q: Who are we?")
+            md("body", "A: We are four Chemical Engineering students in our final year at the University of Waterloo (but you already knew that).")
+            st.image(rf"{str(Path(__file__).parents[0])}\team_photo.png")
+            
 with cols2[1]:
     md("header2", "<strong>OPTIMIZED PARAMETERS</strong>")
 
