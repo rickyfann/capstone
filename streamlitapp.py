@@ -3,12 +3,10 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 from scipy.optimize import fmin
 from optimization import func, costing_comparison
 from pathlib import Path
 import cleaning
-import findfonts
 
 # to run this app, open your cmd and make sure "streamlit is installed"
 # then type "streamlit run {PATH TO streamlitapp.py}" into console
@@ -20,25 +18,17 @@ fonts = {
     "header2": '<p style="font-family:Aptos Display; color:white; font-size: 28px; text-align: center;">',
 }
 
-prop = findfonts.findfont()
-
 def md(font, text):
     st.markdown(fonts[font] + text + "</p>", unsafe_allow_html=True)
 
 # initialization of streamlit app and text
 st.set_page_config(layout="wide")
 
-# st.markdown('<body style="background-color:#8F7B75">')
-
 with open(str(Path(__file__).parents[0]) + "\\styles.css") as f:
     css = f.read()
 
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
-# md("title", "FoulX Predictor App")
-# st.markdown("<title>FoulX Predictor App</title>")
-# st.markdown("<h1>FoulX Predictor App</h1>")
-# st.markdown("<h2>Authors: Aliana Andres, Ricky Fan, Curtis Rhodes, Dorothy Wan</h2>")
 md("header1", "FoulX Predictor App")
 md("header2", "Authors: Aliana Andres, Ricky Fan, Curtis Rhodes, Dorothy Wan")
 md("body", "This is the web app tool developed by the CHE Capstone group 4. The intended use case is to determine the optimal cleaning schedule for a heat exchanger as it degrades in efficiency.")
@@ -117,12 +107,7 @@ for ax in [ax1, ax2]:
     for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
                 ax.get_xticklabels() + ax.get_yticklabels()):
         item.set_fontsize(22)
-        # item.set_fontname("Amasis MT Std")
         item.set_fontname("Times New Roman")
-
-# for figure in [fig, fig2]:
-#     figure.set_figheight(7)
-#     figure.set_figwidth(10)
 
 if year_enable:        
     for axis in (ax1, ax2):
@@ -130,16 +115,11 @@ if year_enable:
         axis.set_xticks(x_tick_locations)
         axis.set_xticklabels(x_tick_labels)
 
-    # a = st.write(fr"The operating cost for {t//365} years is around \${round(modified, -5):.0f}, and the original modified cost is \${round(baseline, -5):.0f}.")
-
 with cols[0]:
     st.pyplot(fig, use_container_width=True)
-    # st.write(rf"The average correction factor obtained from these parameters is **{overall_eff:.2f}** with {max(len(check_index), len(check_index2))} cleanings, which is dependent on the thresholds set by the parameters.")
     
 with cols[1]:
     st.pyplot(fig2, use_container_width=True)
-    # st.write(rf"Assuming the cost of electricity is 18.2 $cents/kWh$ in Ontario, the highest cost of operation is \${cost(min(max(q_vals), q_threshold)):.0f} per day, with an average daily cost of ${cost(np.average(q_vals)):.0f}.")
-    # st.write(rf"Assuming the cost of electricity is {energy_rate} $cents/kWh$ in Ontario, the highest cost of operation is \${round(cost(min(max(q_vals), q_threshold)), -3):.0f} per day, with an average daily cost around ${round(cost(np.average(q_vals)), -3):.0f}.")
 
 percent_diff = (baseline - modified)/baseline * 100
 
@@ -152,13 +132,12 @@ with cols2[0]:
 
     with div[0]:
         with st.container():
-            md("body", "💵 BASELINE (10 YEARS)")
+            md("body", "💵 BASELINE")
             md("numbers", fr"<strong>${round(baseline, -5):,.0f}</strong>")
-        # st.markdown(fonts["body"] + fr"${round(baseline, -5):,.0f}</p>", unsafe_allow_html=True)
 
         st.divider()
         with st.container():
-            md("body", "💵 MODIFIED (10 YEARS)")
+            md("body", "💵 MODIFIED")
             md("numbers", fr"<strong>${round(modified, -5):,.0f}</strong>")
      
     with div[1]:
@@ -198,6 +177,6 @@ with cols2[1]:
 
     st.divider()
     with st.container():
-
-        md("body", "SUMMARY - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquam id diam eget vulputate. Proin interdum gravida lacinia. Aliquam gravida consectetur ipsum, non eleifend lorem scelerisque eu. Mauris ac leo purus. In hac habitasse platea dictumst. Pellentesque vitae lorem nec arcu auctor ornare vel at dui. Donec ultricies gravida aliquet. Maecenas quam arcu, fermentum vitae neque ac, dapibus mattis ex.")
-    
+        md("header2", "<strong>SUMMARY</strong>")
+        md("body", "From the dataset provided by our industrial partner, Petro Canada, we have built a model to predict the degradation of heat exchanger efficiency.")
+        md("body", "The model was built using Meta Prophet, a library for data analysis. From this, several figures can be calculated, such as the baseline costs that would be incurred if the process were to be run at its current state by Petro Canada, as well as the cost for the optimized process.")
