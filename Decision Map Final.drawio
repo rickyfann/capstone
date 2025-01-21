@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" modified="2024-04-03T21:51:37.644Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0" etag="69JnFe0-bRVxrQmBjdGu" version="24.2.2" type="device">
+  <diagram name="Page-1" id="EM_jcGiTvH5GiBIQNsnS">
+    <mxGraphModel dx="1712" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="Eh7ZHfz8yUWVN159C2-E-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="969" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="Eh7ZHfz8yUWVN159C2-E-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="969" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iA6lj9m9CJo9ryHOgTDQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="Eh7ZHfz8yUWVN159C2-E-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="969" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iA6lj9m9CJo9ryHOgTDQ-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="Eh7ZHfz8yUWVN159C2-E-52" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="969" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J7VV7JXqWr-d2YPTVwQS-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Eh7ZHfz8yUWVN159C2-E-2" target="rPIN5ToJqll3coShWmCm-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="1420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J7VV7JXqWr-d2YPTVwQS-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Eh7ZHfz8yUWVN159C2-E-2" target="Eh7ZHfz8yUWVN159C2-E-54">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="1340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-2" value="Completed Tasks" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="939" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="J7VV7JXqWr-d2YPTVwQS-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Eh7ZHfz8yUWVN159C2-E-4" target="Eh7ZHfz8yUWVN159C2-E-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-4" value="Optimizing Cleaning Schedule &amp;amp; Steam Trap Design" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="929" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-7" target="Eh7ZHfz8yUWVN159C2-E-46" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iA6lj9m9CJo9ryHOgTDQ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-7" target="Eh7ZHfz8yUWVN159C2-E-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iA6lj9m9CJo9ryHOgTDQ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-7" target="Eh7ZHfz8yUWVN159C2-E-44" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-7" value="Literature review" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="939" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-11" target="Eh7ZHfz8yUWVN159C2-E-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-11" value="Project Admin Forms" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="639" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-15" target="Eh7ZHfz8yUWVN159C2-E-26" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="443.7500000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-15" value="Initial Literature and Topic Research" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="739" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" target="Eh7ZHfz8yUWVN159C2-E-22" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="575" as="targetPoint" />
+            <mxPoint x="270" y="999" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="270" y="1269" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-22" target="Eh7ZHfz8yUWVN159C2-E-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-22" value="Simulation of Data" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="1239" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-26" target="Eh7ZHfz8yUWVN159C2-E-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-26" value="Problem Statement, Needs, Constraint and Criteria" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="739" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-29" value="Progress Meeting 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="639" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-32" target="Eh7ZHfz8yUWVN159C2-E-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-32" value="Team Agreements, Professor Signatures" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="639" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="J7VV7JXqWr-d2YPTVwQS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Eh7ZHfz8yUWVN159C2-E-39" target="Eh7ZHfz8yUWVN159C2-E-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-39" value="Progress Meeting 2 Deliverables" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="1239" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-42" value="Updated Gantt Chart and criteria based on feedback" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1239" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-44" value="Effects of Fouling in Industrial Heat Exchangers" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="1039" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-46" value="Scale Cleaning Methods for Industrial Heat Exchangers" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="839" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-49" value="Steam Trap Design and the Effects of Poor Management" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="939" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-58" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-52" target="Eh7ZHfz8yUWVN159C2-E-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-52" value="Model Data with Excel / Aspen" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="1139" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-54" target="Eh7ZHfz8yUWVN159C2-E-59" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-54" value="Python Model" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="1310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-57" value="Create simulation and test different operating configurations" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="1139" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-62" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Eh7ZHfz8yUWVN159C2-E-59" target="Eh7ZHfz8yUWVN159C2-E-61" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-59" value="Facebook Prophet" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="1310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="J7VV7JXqWr-d2YPTVwQS-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Eh7ZHfz8yUWVN159C2-E-61" target="rPIN5ToJqll3coShWmCm-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Eh7ZHfz8yUWVN159C2-E-61" value="Data validation and analysis" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rPIN5ToJqll3coShWmCm-2" value="Steam trap design and sizing" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="1390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rPIN5ToJqll3coShWmCm-4" value="Finalizing optimization schedule" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="1310" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
